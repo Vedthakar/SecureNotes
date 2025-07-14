@@ -1,0 +1,18 @@
+[package]
+name = "secure_notes_frontend"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+yew = { version = "0.21", features = ["csr"] }
+yew-router = "0.18.0"
+gloo-net = "0.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+web-sys = { version = "0.3.77", features = ["console", "HtmlInputElement", "HtmlTextAreaElement"] }
+wasm-bindgen-futures = "0.4.50"
+gloo-storage = "0.3"
+js-sys = "0.3.77"
+base64 = "0.22.1"
+gloo-timers = "0.3.0"
+gloo-console = "0.3.0"

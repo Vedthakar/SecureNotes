@@ -1,0 +1,56 @@
+   Compiling secure_notes_frontend v0.1.0 (/Users/vedthakar/Documents/Personal Coding/SecureNotes/secure_notes_frontend)
+error[E0432]: unresolved import `gloo_console`
+ --> src/pages/notes.rs:7:5
+  |
+7 | use gloo_console::log;
+  |     ^^^^^^^^^^^^ use of unresolved module or unlinked crate `gloo_console`
+  |
+  = help: if you wanted to use a crate named `gloo_console`, use `cargo add gloo_console` to add it to your `Cargo.toml`
+
+warning: unused import: `HtmlInputElement`
+ --> src/pages/login.rs:6:24
+  |
+6 | use web_sys::{console, HtmlInputElement};
+  |                        ^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `serde::Serialize`
+ --> src/pages/login.rs:8:5
+  |
+8 | use serde::Serialize;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `web_sys::window`
+  --> src/pages/login.rs:10:5
+   |
+10 | use web_sys::window;
+   |     ^^^^^^^^^^^^^^^
+
+warning: unused import: `HtmlInputElement`
+ --> src/pages/register.rs:6:24
+  |
+6 | use web_sys::{console, HtmlInputElement};
+  |                        ^^^^^^^^^^^^^^^^
+
+warning: unused import: `serde::Serialize`
+ --> src/pages/register.rs:8:5
+  |
+8 | use serde::Serialize;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::rc::Rc`
+ --> src/pages/notes.rs:8:5
+  |
+8 | use std::rc::Rc;
+  |     ^^^^^^^^^^^
+
+warning: unused import: `std::cell::RefCell`
+ --> src/pages/notes.rs:9:5
+  |
+9 | use std::cell::RefCell;
+  |     ^^^^^^^^^^^^^^^^^^
+
+For more information about this error, try `rustc --explain E0432`.
+warning: `secure_notes_frontend` (bin "secure_notes_frontend") generated 7 warnings
+error: could not compile `secure_notes_frontend` (bin "secure_notes_frontend") due to 1 previous error; 7 warnings emitted
