@@ -1,0 +1,785 @@
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+.home-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-page body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: hsl(222, 47%, 11%);
+    color: hsl(280, 20%, 90%);
+    min-height: 100vh;
+}
+
+/* Background gradient */
+.home-page .bg-gradient {
+    background: linear-gradient(135deg, 
+        hsl(220, 40%, 13%) 0%, 
+        hsl(271, 76%, 25%) 50%, 
+        hsl(220, 40%, 20%) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decorations */
+.home-page .bg-decoration-1 {
+    position: absolute;
+    top: -10rem;
+    right: -10rem;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 50%;
+    filter: blur(3rem);
+}
+
+.home-page .bg-decoration-2 {
+    position: absolute;
+    bottom: -10rem;
+    left: -10rem;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 50%;
+    filter: blur(3rem);
+}
+
+/* Card styles */
+.home-page .card {
+    position: relative;
+    background: rgba(56, 58, 89, 0.5);
+    backdrop-filter: blur(1rem);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border-radius: 0.75rem;
+    padding: 3rem;
+    max-width: 28rem;
+    width: 100%;
+}
+
+/* Header styles */
+.home-page .header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.home-page .title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, hsl(271, 76%, 70%) 0%, hsl(271, 76%, 85%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.home-page .subtitle {
+    color: hsl(280, 20%, 75%);
+    font-size: 1.125rem;
+}
+
+/* Button container */
+.home-page .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Base button styles */
+.home-page .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.home-page .btn:hover {
+    transform: scale(1.05);
+}
+
+.home-page .btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Primary button (Create Account) */
+.home-page .btn-primary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 
+        0 4px 15px rgba(139, 92, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.home-page .btn-primary:hover {
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.25);
+}
+
+/* Secondary button (Sign In) */
+.home-page .btn-secondary {
+    background: linear-gradient(135deg, hsl(220, 15%, 25%) 0%, hsl(220, 15%, 20%) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    color: hsl(271, 76%, 85%);
+}
+
+.home-page .btn-secondary:hover {
+    background: linear-gradient(135deg, hsl(220, 15%, 30%) 0%, hsl(220, 15%, 25%) 100%);
+    color: white;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
+}
+
+/* Shimmer effect */
+.home-page .btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg) translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.home-page .btn:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+/* Icons */
+.home-page .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.home-page .btn:hover .icon {
+    transform: scale(1.1);
+}
+
+/* Divider */
+.home-page .divider {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.home-page .divider-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(139, 92, 246, 0.3);
+}
+
+.home-page .divider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(56, 58, 89, 0.5);
+    padding: 0 1rem;
+    color: hsl(271, 76%, 75%);
+    font-size: 0.875rem;
+}
+
+/* Guest section */
+.home-page .guest-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.home-page .guest-text {
+    color: hsl(280, 20%, 65%);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.home-page .btn-ghost {
+    background: transparent;
+    color: hsl(271, 76%, 75%);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.home-page .btn-ghost:hover {
+    color: hsl(271, 76%, 85%);
+    background: rgba(139, 92, 246, 0.1);
+    transform: none;
+}
+
+/* Footer */
+.home-page .footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    text-align: center;
+}
+
+.home-page .footer-text {
+    color: hsl(280, 20%, 55%);
+    font-size: 0.75rem;
+}
+
+/* Keyframe animations */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+.auth-page * {
+    margin: 0;
+    padding: 0;
+}
+
+.auth-page body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: hsl(222, 47%, 11%);
+    color: hsl(280, 20%, 90%);
+    min-height: 100vh;
+}
+
+/* Background gradient */
+.auth-page .bg-gradient {
+    background: linear-gradient(135deg, 
+        hsl(220, 40%, 13%) 0%, 
+        hsl(271, 76%, 25%) 50%, 
+        hsl(220, 40%, 20%) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decorations */
+.auth-page .bg-decoration-1 {
+    position: absolute;
+    top: -10rem;
+    right: -10rem;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 50%;
+    filter: blur(3rem);
+}
+
+.auth-page .bg-decoration-2 {
+    position: absolute;
+    bottom: -10rem;
+    left: -10rem;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 50%;
+    filter: blur(3rem);
+}
+
+/* Card styles */
+.auth-page .card {
+    position: relative;
+    background: rgba(56, 58, 89, 0.5);
+    backdrop-filter: blur(1rem);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border-radius: 0.75rem;
+    padding: 3rem;
+    max-width: 28rem;
+    width: 100%;
+}
+
+/* Header styles */
+.auth-page .header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.auth-page .title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, hsl(271, 76%, 70%) 0%, hsl(271, 76%, 85%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.auth-page .subtitle {
+    color: hsl(280, 20%, 75%);
+    font-size: 1.125rem;
+}
+
+/* Form styles */
+.auth-page .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-page .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: hsl(280, 20%, 90%);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.auth-page .form-input {
+    width: 100%;
+    height: 3rem;
+    padding: 0 1rem;
+    background: rgba(56, 58, 89, 0.5);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 0.5rem;
+    color: hsl(280, 20%, 90%);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(0.5rem);
+    box-sizing: border-box;
+}
+
+.auth-page .form-input:focus {
+    outline: none;
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.auth-page .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Base button styles */
+.auth-page .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 1rem;
+}
+
+.auth-page .btn:hover {
+    transform: scale(1.05);
+}
+
+.auth-page .btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Primary button (Create Account) */
+.auth-page .btn-primary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 
+        0 4px 15px rgba(139, 92, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.auth-page .btn-primary:hover {
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.25);
+}
+
+/* Shimmer effect */
+.auth-page .btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg) translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.auth-page .btn:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+/* Footer */
+.auth-page .footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    text-align: center;
+}
+
+.auth-page .footer-text {
+    color: hsl(280, 20%, 55%);
+    font-size: 0.75rem;
+}
+
+.auth-page .footer a {
+    color: hsl(271, 76%, 70%);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-page .footer a:hover {
+    color: hsl(271, 76%, 85%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-page .card {
+        padding: 2rem;
+    }
+
+    .auth-page .title {
+        font-size: 2.5rem;
+    }
+}
+
+:root {
+--background: 0 0% 100%;
+--foreground: 222.2 84% 4.9%;
+
+--card: 0 0% 100%;
+--card-foreground: 222.2 84% 4.9%;
+
+--popover: 0 0% 100%;
+--popover-foreground: 222.2 84% 4.9%;
+
+--primary: 222.2 47.4% 11.2%;
+--primary-foreground: 210 40% 98%;
+
+--secondary: 210 40% 96.1%;
+--secondary-foreground: 222.2 47.4% 11.2%;
+
+--muted: 210 40% 96.1%;
+--muted-foreground: 215.4 16.3% 46.9%;
+
+--accent: 210 40% 96.1%;
+--accent-foreground: 222.2 47.4% 11.2%;
+
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 210 40% 98%;
+
+--border: 214.3 31.8% 91.4%;
+--input: 214.3 31.8% 91.4%;
+--ring: 222.2 84% 4.9%;
+
+--radius: 0.5rem;
+
+--sidebar-background: 0 0% 98%;
+
+--sidebar-foreground: 240 5.3% 26.1%;
+
+--sidebar-primary: 240 5.9% 10%;
+
+--sidebar-primary-foreground: 0 0% 98%;
+
+--sidebar-accent: 240 4.8% 95.9%;
+
+--sidebar-accent-foreground: 240 5.9% 10%;
+
+--sidebar-border: 220 13% 91%;
+
+--sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+.dark {
+--background: 222.2 84% 4.9%;
+--foreground: 210 40% 98%;
+
+--card: 222.2 84% 4.9%;
+--card-foreground: 210 40% 98%;
+
+--popover: 222.2 84% 4.9%;
+--popover-foreground: 210 40% 98%;
+
+--primary: 210 40% 98%;
+--primary-foreground: 222.2 47.4% 11.2%;
+
+--secondary: 217.2 32.6% 17.5%;
+--secondary-foreground: 210 40% 98%;
+
+--muted: 217.2 32.6% 17.5%;
+--muted-foreground: 215 20.2% 65.1%;
+
+--accent: 217.2 32.6% 17.5%;
+--accent-foreground: 210 40% 98%;
+
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 210 40% 98%;
+
+--border: 217.2 32.6% 17.5%;
+--input: 217.2 32.6% 17.5%;
+--ring: 212.7 26.8% 83.9%;
+--sidebar-background: 240 5.9% 10%;
+--sidebar-foreground: 240 4.8% 95.9%;
+--sidebar-primary: 224.3 76.3% 48%;
+--sidebar-primary-foreground: 0 0% 100%;
+--sidebar-accent: 240 3.7% 15.9%;
+--sidebar-accent-foreground: 240 4.8% 95.9%;
+--sidebar-border: 240 3.7% 15.9%;
+--sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+/* Custom typing interface styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: hsl(222, 47%, 11%);
+    color: hsl(280, 20%, 90%);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Background gradient */
+.bg-gradient {
+    background: linear-gradient(135deg, 
+        hsl(220, 40%, 13%) 0%, 
+        hsl(271, 76%, 25%) 50%, 
+        hsl(220, 40%, 20%) 100%);
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decorations */
+.bg-decoration-1, .bg-decoration-2 {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    filter: blur(3rem);
+    z-index: 0;
+}
+
+.bg-decoration-1 {
+    top: -10rem;
+    right: -10rem;
+    background: rgba(139, 92, 246, 0.15);
+}
+
+.bg-decoration-2 {
+    bottom: -10rem;
+    left: -10rem;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: rgba(56, 58, 89, 0.3);
+    backdrop-filter: blur(1rem);
+    border-right: 1px solid rgba(139, 92, 246, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.sidebar-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: hsl(280, 20%, 85%);
+}
+
+.sidebar-content {
+    flex: 1;
+    padding: 1rem;
+}
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+}
+
+/* Typing header */
+.typing-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+    background: rgba(56, 58, 89, 0.1);
+    backdrop-filter: blur(0.5rem);
+}
+
+.document-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: hsl(280, 20%, 85%);
+}
+
+/* Typing area */
+.typing-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.typing-textarea {
+    flex: 1;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: hsl(280, 20%, 90%);
+    font-size: 1.125rem;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.8;
+    resize: none;
+    outline: none;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.typing-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-style: normal;
+}
+
+.typing-textarea:focus {
+    outline: none;
+}
+
+.title-textarea {
+    height: 3rem; /* or try 2.5rem, 2rem */
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: hsl(280, 20%, 90%);
+    font-size: 2.25rem; /* smaller font */
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.4;
+    resize: none;
+    outline: none;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+.title-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-style: normal;
+}
+
+.title-textarea:focus {
+    outline: none;
+}
+/* Status bar */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.1);
+    background: rgba(56, 58, 89, 0.1);
+    backdrop-filter: blur(0.5rem);
+    font-size: 0.875rem;
+    color: hsl(280, 20%, 65%);
+}
+
+.save-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.save-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.8);
+    animation: pulse 2s infinite;
+}
+
+.word-count {
+    color: hsl(280, 20%, 55%);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 240px;
+    }
+    
+    .typing-area {
+        padding: 1rem;
+    }
+    
+    .typing-header,
+    .status-bar {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
